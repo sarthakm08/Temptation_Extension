@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+:root {
+  --bg-black: #08080D;
+  --bg-charcoal: #11111B;
+  --bg-surface: #161624;
+  --bg-elevated: #1E1E30;
+  
+  --neon-violet: #A855F7;
+  --neon-violet-glow: rgba(168, 85, 247, 0.35);
+  
+  --neon-crimson: #FF3158;
+  --neon-crimson-glow: rgba(255, 49, 88, 0.35);
+  
+  --neon-cyan: #35E7FF;
+  --neon-cyan-glow: rgba(53, 231, 255, 0.35);
+  
+  --text-primary: #F5F5FA;
+  --text-muted: #9292A6;
+  --text-dim: #606078;
+  
+  --border-violet: rgba(168, 85, 247, 0.18);
+  --border-crimson: rgba(255, 49, 88, 0.25);
+  --border-cyan: rgba(53, 231, 255, 0.2);
+  --border-dark: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background-color: var(--bg-black);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #08080D;
+}
+::-webkit-scrollbar-thumb {
+  background: #252538;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-violet);
+}
+
+/* Cyber Matrix Background Grid */
+.cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(168, 85, 247, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(168, 85, 247, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.cyber-dots {
+  background-image: radial-gradient(rgba(168, 85, 247, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Glassmorphism Surface */
+.glass-panel {
+  background: rgba(17, 17, 27, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+.glass-panel-elevated {
+  background: rgba(26, 26, 40, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+}
+
+.glass-panel-crimson {
+  background: rgba(25, 12, 18, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 49, 88, 0.3);
+}
+
+/* Glow Utilities */
+.glow-violet {
+  box-shadow: 0 0 25px -4px rgba(168, 85, 247, 0.35);
+}
+
+.glow-crimson {
+  box-shadow: 0 0 25px -4px rgba(255, 49, 88, 0.35);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 25px -4px rgba(53, 231, 255, 0.35);
+}
+
+.text-glow-violet {
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+}
+
+.text-glow-crimson {
+  text-shadow: 0 0 12px rgba(255, 49, 88, 0.6);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 12px rgba(53, 231, 255, 0.6);
+}
+
+/* Code Editor Styling */
+.code-container {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Pulse Animations */
+@keyframes cyberPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.3; }
+}
+
+.animate-cyber-pulse {
+  animation: cyberPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.scanline-effect {
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(53, 231, 255, 0.4), transparent);
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+}
