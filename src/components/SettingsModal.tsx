@@ -118,7 +118,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               Target Model
             </label>
             <div className="grid grid-cols-3 gap-2">
-              {['gemini-2.5-flash', 'gemini-1.5-pro', 'gemini-2.0-flash'].map((m) => (
+              {['gemini-3.8-flash', 'gemini-1.5-pro', 'gemini-2.0-flash'].map((m) => (
                 <button
                   key={m}
                   type="button"

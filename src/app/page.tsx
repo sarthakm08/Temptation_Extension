@@ -20,7 +20,7 @@ export default function Home() {
   const [currentProject, setCurrentProject] = useState<ExtensionProject | null>(null);
   const [savedProjects, setSavedProjects] = useState<ExtensionProject[]>([]);
   const [apiKey, setApiKey] = useState<string>('');
-  const [model, setModel] = useState<string>('gemini-2.5-flash');
+  const [model, setModel] = useState<string>('gemini-3.8-flash');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
   const [isGuideOpen, setIsGuideOpen] = useState<boolean>(false);

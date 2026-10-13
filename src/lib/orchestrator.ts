@@ -15,7 +15,7 @@ import { callGeminiForExtension } from './gemini';
 export async function runAgentOrchestration(
   prompt: string,
   apiKey?: string,
-  model = 'gemini-2.5-flash'
+  model = 'gemini-3.8-flash'
 ): Promise<ExtensionProject> {
   const projectId = 'proj_' + Math.random().toString(36).substring(2, 9);
   const now = new Date().toISOString();

@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
 
     // Determine API key from server environment or user client
     const effectiveKey = apiKey?.trim() || process.env.GEMINI_API_KEY || '';
-    const effectiveModel = model?.trim() || process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+    const effectiveModel = model?.trim() || process.env.GEMINI_MODEL || 'gemini-3.8-flash';
 
     const project = await runAgentOrchestration(prompt, effectiveKey, effectiveModel);
 

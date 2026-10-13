@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    const result = await testGeminiConnection(keyToTest, model || 'gemini-2.5-flash');
+    const result = await testGeminiConnection(keyToTest, model || 'gemini-3.8-flash');
     return NextResponse.json(result);
   } catch (error: unknown) {
     const msg = error instanceof Error ? error.message : 'Test failed';

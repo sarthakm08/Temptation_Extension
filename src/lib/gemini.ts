@@ -3,7 +3,7 @@ export interface GeminiConfig {
   model?: string;
 }
 
-export async function testGeminiConnection(apiKey: string, model = 'gemini-2.5-flash'): Promise<{ success: boolean; message: string; model?: string }> {
+export async function testGeminiConnection(apiKey: string, model = 'gemini-3.8-flash'): Promise<{ success: boolean; message: string; model?: string }> {
   if (!apiKey || apiKey.trim().length === 0) {
     return { success: false, message: 'API key is required.' };
   }
@@ -13,6 +13,7 @@ export async function testGeminiConnection(apiKey: string, model = 'gemini-2.5-f
     const response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      signal: AbortSignal.timeout(45000),
       body: JSON.stringify({
         contents: [
           {
@@ -45,7 +46,7 @@ export async function testGeminiConnection(apiKey: string, model = 'gemini-2.5-f
 export async function callGeminiForExtension(
   prompt: string,
   apiKey: string,
-  model = 'gemini-2.5-flash'
+  model = 'gemini-3.8-flash'
 ): Promise<{ success: boolean; data?: unknown; error?: string }> {
   try {
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey.trim())}`;
@@ -81,6 +82,7 @@ Return ONLY valid JSON matching this schema:
     const response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      signal: AbortSignal.timeout(20000),
       body: JSON.stringify({
         contents: [
           {

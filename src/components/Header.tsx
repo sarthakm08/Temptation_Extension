@@ -47,7 +47,7 @@ export const Header: React.FC<HeaderProps> = ({
             <span className={`px-1.5 py-0.5 rounded text-[9px] font-bold ${
               isConfigured ? 'bg-purple-900/50 text-[#A855F7] border border-[#A855F7]/30' : 'bg-gray-800 text-gray-400'
             }`}>
-              {isConfigured ? 'GEMINI 2.5 FLASH' : 'LOCAL SYNTHESIS'}
+              {isConfigured ? 'GEMINI 3.8 FLASH' : 'LOCAL SYNTHESIS'}
             </span>
           </div>
         </div>
